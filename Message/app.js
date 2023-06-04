@@ -5,12 +5,14 @@ const msgList = document.querySelector(".msg-list");
 
 //Event Lsiteners
 msgButton.addEventListener("click", showMsg);
+// enter button to submit
+msgInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") showMsg();
+});
 const array = [];
 
 //functions
 function showMsg(e) {
-  e.preventDefault();
-
   //ShowDiv
   const showDiv = document.createElement("div");
   showDiv.classList.add("message");
