@@ -2,7 +2,7 @@
 const images = document.querySelectorAll(".image");
 const previous = document.querySelector(".prev");
 const next = document.querySelector(".next");
-const dots = document.querySelector(".dot");
+const dots = document.querySelectorAll(".dot");
 
 // Event Listeners
 previous.addEventListener("click", showPrevImg);
@@ -10,9 +10,11 @@ next.addEventListener("click", showNextImg);
 
 //Functions
 let index = 0;
+
 showImg();
+
 function showImg() {
-  for (i = 0; i < images.length; i++) {
+  for (let i = 0; i < images.length; i++) {
     if (i === index) {
       images[i].style.display = "block";
       dots[i].classList.add("active");
@@ -22,6 +24,7 @@ function showImg() {
     }
   }
 }
+
 function showPrevImg() {
   index--;
 
